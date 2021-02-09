@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Escube game : Classe CObstacle </title>
+</head>
+	<body>
+		<!-- Classe CObstacle -->
+		<h1>Classe CObstacle</h1>
+			<p>Cette classe représente la classe mère des objets obstacles, elle correspond à un obstacle dans la zone de jeu qui fait perdre l'utilisateur : si un objet de type <a href="classe_personnage.html">CPersonnage</a> est en contact avec.</p>
+			<table>
+				<tbody>
+					<tr>
+						<td>Module :</td>
+						<td>from CObstacle import CObstacle</td>
+					</tr>
+					<tr>
+						<td>Classe mère :</td>
+						<td>/</td>
+					</tr>
+					<tr>
+						<td>Classe(s) fille(s) :</td>
+						<td>/</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		<h2>Membres</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>+</td>
+						<td><a href="classe_map.html">CMap</a></td>
+						<td><a href="#map">map</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>string</td>
+						<td><a href="#color">color</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>int</td>
+						<td><a href="#width">width</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>int</td>
+						<td><a href="#height">height</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>int</td>
+						<td><a href="#x">x</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>int</td>
+						<td><a href="#y">y</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td><a href="http://tkinter.fdex.eu/doc/caw.html#rectangles">tkinter.Canvas rectangle</a></td>
+						<td><a href="#obstacle">obstacle</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>int</td>
+						<td><a href="#speed">speed</a></td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h2>Fonctions publiques</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>Constructeur :</td>
+						<td><a href="#CObstacle">CObstacle</a>(pmap : <a href="classe_map.html">CMap</a>, pcolor="#696969" : string, pwidth=100 : int, pheight=20 : int, px=0 : int, py=0 : int)</td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td><a href="#obj_init">obj_init</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#movement">movement</a>()</td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td><a href="#move">move</a>(px : int, py : int)</td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h2>Documentation des membres</h2>
+			<table>
+				<tbody>
+					<h3 id="map">CObstacle : map</h3>
+					<p>Correspond à l'espace de jeu parent <a href="classe_map.html">CMap</a>.</p>
+					<h3 id="color">CObstacle : color</h3>
+					<p>Correspond à la couleur de l'obstacle. <br>Exemple : "#696969" ou "white" <br>Valeur par defaut : "#696969".</p>
+					<h3 id="width">CObstacle : width</h3>
+					<p>Correspond à la largeur de l'obstacle. <br>Valeur par défaut : 100.</p>
+					<h3 id="height">CObstacle : height</h3>
+					<p>Correspond à la hauteur de l'obstacle. <br>Valeur par défaut : 20.</p>
+					<h3 id="x">CObstacle : x</h3>
+					<p>Correspond à la position x de l'obstacle par rapport au cadre parent <a href="#map">map</a>.</p>
+					<h3 id="y">CObstacle : y</h3>
+					<p>Correspond à la position y de l'obstacle par rapport au cadre parent <a href="#map">map</a>.</p>
+					<h3 id="obstacle">CObstacle : obstacle</h3>
+					<p>Correspond au corps de l'obstacle sous forme de canvas rectangle qui a pour parent <a href="#map">map</a>.</p>
+					<h3 id="speed">CObstacle : speed</h3>
+					<p>Correspond à la vitesse de déplacement l'obstacle en ms <br>
+					Valeur par défaut : 1.</p>
+				</tbody>
+			</table>
+
+		<h2>Documentation des fonctions</h2>
+			<h3 id="CObstacle">CObstacle : CObstacle(pmap : <a href="classe_map.html">CMap</a>, pcolor="#696969" : string, pwidth=20 : int, pheight=20 : int, px=0 : int, py=0)</h3>
+				<p>Construit un CObstacle avec les paramètres suivants :<br>
+				pmap : zone de jeu parent <a href="classe_map.html">CMap</a>.<br>
+				pcolor : couleur de l'obstacle. Valeur par défaut : "#696969".<br>
+				pwidth : largeur de l'obstacle. Valeur par défaut : 100.<br>
+				pheight : hauteur de l'obstacle.  Valeur par défaut : 20.<br>
+				px : position x de l'obstacle par rapport au cadre map.canvas. Valeur par défaut : 0.<br>
+				py : position y de l'obstacle par rapport au cadre map.canvas. Valeur par défaut : 0.<br>
+				</p>
+			<h3 id="obj_init">CObstacle : obj_init()</h3>
+				<p>Fonction qui initialise l'objet CObstacle :<br>
+				elle crée le corps de l'obstacle.<br>
+				elle affiche l'obstacle dans la zone de jeu.<br>
+				</p>
+			<h3 id="movement">CObstacle : movement()</h3>
+				<p>Fonction qui deplace le CObstacle a ses coordonnees x et y</p>
+			<h3 id="move">CObstacle : move(px : int, py : int)</h3>
+				<p>Fonction qui change les coordonnees x et y</p>
+	</body>
+</html>

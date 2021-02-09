@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Escube game : Classe CMap </title>
+</head>
+	<body>
+		<!-- Classe CMap -->
+		<h1>Classe CMap</h1>
+			<p>Classe correspondant au plateau du jeu, elle contient tous les elements (personnage, obstacles, etc...) elle peut ajouter ou supprimer des elements</p>
+			<table>
+				<tbody>
+					<tr>
+						<td>Module :</td>
+						<td>from CMap import CMap</td>
+					</tr>
+					<tr>
+						<td>Classe mère :</td>
+						<td>/</td>
+					</tr>
+					<tr>
+						<td>Classe(s) fille(s) :</td>
+						<td>/</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		<h2>Membres</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>+</td>
+						<td>int</td>
+						<td><a href="#width">width</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>int</td>
+						<td><a href="#height">height</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>string</td>
+						<td><a href="#color">color</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>objet[]</td>
+						<td><a href="#element">element</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>tkinter.Tk</td>
+						<td><a href="#fenetre">fenetre</a></td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td><a href="http://tkinter.fdex.eu/doc/caw.html#rectangles">tkinter.Canvas</a></td>
+						<td><a href="#canvas">canvas</a></td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h2>Fonctions publiques</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>Constructeur :</td>
+						<td><a href="#CMap">CMap</a>(pwidth=800 : int, pheight=600 : int, pcolor="#DCDCDC" : string)</td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td><a href="#obj_init">obj_init</a>()</td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td><a href="#add">add</a>(pelement : objet[])</td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td><a href="#elements_intersect">elements_intersect</a>(pelement1 : objet, pelement2 : objet) : bool</td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h2>Documentation des membres</h2>
+			<table>
+				<tbody>
+					<h3 id="width">CMap : width</h3>
+					<p>Correspond à la largeur de la zone de jeu. <br>Valeur par défaut : 800.</p>
+					<h3 id="height">CMap : height</h3>
+					<p>Correspond à la hauteur de la zone de jeu. <br>Valeur par défaut : 600.</p>
+					<h3 id="color">CMap : color</h3>
+					<p>Correspond à la couleur de la zone de jeu. <br>Exemple : "#DCDCDC" ou "white" <br>Valeur par defaut : "#DCDCDC".</p>
+					<h3 id="element">CMap : element</h3>
+					<p>Tableau qui contient tous les élément de la zone de jeu.</p>
+					<h3 id="fenetre">CMap : fenetre</h3>
+					<p>Correspond à la fenêtre principale.</p>
+					<h3 id="canvas">CMap : canvas</h3>
+					<p>Cadre de type tkinter.Canvas qui correspond au corps de la zone de jeu.</p>
+				</tbody>
+			</table>
+
+		<h2>Documentation des fonctions</h2>
+			<h3 id="CMap">CMap : CMap(pwidth=800 : int, pheight=600 : int, pcolor="#DCDCDC" : string)</h3>
+				<p>Construit un CMap avec les paramètres suivants :<br>
+				pmap : zone de jeu parent CMap.<br>
+				pcolor : couleur de l'arrivee. Valeur par défaut : "#DCDCDC".<br>
+				pwidth : largeur de l'arrivee. Valeur par défaut : 800.<br>
+				pheight : hauteur de l'arrivee.  Valeur par défaut : 600.<br>
+				</p>
+			<h3 id="obj_init">CMap : obj_init()</h3>
+				<p>Fonction qui initialise l'objet CMap :<br>
+				elle crée un cadre.<br>
+				</p>
+			<h3 id="add">CMap : add(pelement : objet[])</h3>
+				<p>Enregistre un ou plusieurs element dans <a href="#element">element</a></p>
+			<h3 id="elements_intersect">CMap : elements_intersect(pelement1 : objet, pelement2 : objet) : bool</h3>
+				<p>Fonciton qui indique si pelement1 et pelement2 se touchent</p>
+	</body>
+</html>

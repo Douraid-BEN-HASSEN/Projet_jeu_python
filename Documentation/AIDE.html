@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jeu : Escube Game</title>
+	</head>
+	<body>
+		<h1><u>Documentation Code :</u></h1>
+			<p>	<a href="classe_map.html">CMap</a><br>
+				<a href="classe_personnage.html">CPersonnage</a><br>
+				<a href="classe_arrivee.html">CArrivee</a><br>
+				<a href="classe_obstacle.html">CObstacle</a><br>
+				<a href="classe_setting.html">CSetting</a><br>
+				<a href="classe_game.html">CGame</a><br>
+				<a href="image\uml.png">Diagramme UML</a><br>
+			</p>
+		<h1><u>But du jeu :</u></h1>
+			<p>Se déplacer jusqu'à la zone d'arrivée sans toucher les obstacles :<br>
+				<img src="image\1.png" width="300">
+			</p>
+		<h1><u>Déplacements :</u></h1>
+			<p>Avec les touches directionnelles Haut, Bas, Droite et Gauche :<br>
+				<img src="image\touches.png" width="100">
+			</p>
+		<h1><u>Setting :</u></h1>
+			<p>Pour changer les paramètre du jeu :<br>
+				<img src="image\set_setting.PNG">
+			</p>
+		<h1><u>Créer un nouveau joueur :</u></h1>
+			<p>Pour créer un nouveau joueur :<br>
+				<img src="image\nouveau_joueur.PNG">
+			</p>
+		<h1><u>Fichier niveau :</u></h1>
+			<p>répertoire : ressource\level\<br>
+				nom : niveau_X<br>
+				format : <p><textarea rows=10 cols=50>
+########## MAP OBJECT ##########
+map_title=nom du niveau;
+map_color=couleur de la zone de jeu;
+map_height=hauteur de la zone de jeu;
+map_width=largeur de de la zone de jeu;
+########## ARRIVEE OBJECT ##########
+arrivee_color=couleur de l'arrivée;
+arrivee_x=position x de l'arrivée par rapport à la zone de jeu;
+arrivee_y=position y de l'arrivée par rapport à la zone de jeu;
+arrivee_width=largeur de l'arrivée;
+arrivee_height=hauteur de l'arrivée;
+########## PERSONNAGE OBJECT ##########
+personnage_color=couleur du personnage;
+personnage_width=largeur du personnage; 
+personnage_height=hauteur du personnage;
+personnage_x=position x du personnage par rapport à la zone de jeu;
+personnage_y=position y du personnage par rapport à la zone de jeu;
+########## OBSTACLE OBJECT ##########
+obstacle_color=couleur de l'obstacle;
+obstacle_x=posistion x de l'obstacle;
+obstacle_y=posistion y de l'obstacle; 
+obstacle_width=largeur de l'obstacle; 
+obstacle_height=hauteur de l'obstacle;
+					</textarea></p><br>
+				exemple : <p><textarea rows=10 cols=50>########## MAP OBJECT ##########
+map_title=Niveau 1;
+map_color=#DCDCDC;
+map_height=600;
+map_width=800;
+########## ARRIVEE OBJECT ##########
+arrivee_color=#00FF00;
+arrivee_x=10;
+arrivee_y=10;
+arrivee_width=100;
+arrivee_height=100;
+########## PERSONNAGE OBJECT ##########
+personnage_color=#F5DD29;
+personnage_width=25; 
+personnage_height=25;
+personnage_x=10;
+personnage_y=565;
+########## OBSTACLE OBJECT ##########
+obstacle_color=#696969;
+obstacle_x=10;
+obstacle_y=120; 
+obstacle_width=400; 
+obstacle_height=50;
+
+obstacle_color=#696969;
+obstacle_x=400;
+obstacle_y=390; 
+obstacle_width=390; 
+obstacle_height=200;</textarea></p><br>
+			</p>
+	</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Escube game : Classe CGame </title>
+</head>
+	<body>
+		<!-- Classe CGame -->
+		<h1>Classe CGame</h1>
+			<p>Classe correspondant à l'interface graphique du jeu, elle utilise tous les elements </a>(zone de jeu, personnage, arrivée, obstacles, etc...). C'est le cœur du jeu : avec utilisation de Thread pour la gestion des parties et la gestion des sauvegardes.</p>
+				<table>
+					<tbody>
+						<tr>
+							<td>Module :</td>
+							<td>from CGame import CGame</td>
+						</tr>
+						<tr>
+							<td>Classe mère :</td>
+							<td>/</td>
+						</tr>
+						<tr>
+							<td>Classe</a>(s) fille</a>(s) :</td>
+							<td>/</td>
+						</tr>
+					</tbody>
+				</table>
+		
+		<h2>Membres</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>+</td>
+						<td>tkinter.Tk</td>
+						<td><a href="#fenetre">fenetre</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="classe_map.html">CMap</a></td>
+						<td><a href="#map">map</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="classe_personnage.html">CPersonnage</a></td>
+						<td><a href="#personnage">personnage</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="classe_arrivee.html">CArrivee</a></td>
+						<td><a href="#arrivee">arrivee</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="classe_obstacle.html">CObstacle</a>[]</td>
+						<td><a href="#obstacles">obstacles</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a></td>
+						<td><a href="#game_status_canvas">game_status_canvas</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#startBTN">startBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#restartBTN">restartBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#nextBTN">nextBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#pauseBTN">pauseBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#saveBTN">saveBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#show_menuBTN">show_menuBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a></td>
+						<td><a href="#menu_popup_canvas">menu_popup_canvas</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/frw.html">tkinter.Frame</a></td>
+						<td><a href="#player_lbFM">player_lbFM</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/scrw.html">tkinter.Scrollbar</a></td>
+						<td><a href="#player_lbSB">player_lbSB</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/lbw.html">tkinter.Listbox</a></td>
+						<td><a href="#playerLB">playerLB</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#select_player_okBTN">select_player_okBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#add_playerBTN">add_playerBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#remove_playerBTN">remove_playerBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a></td>
+						<td><a href="#scoreLBL">scoreLBL</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a></td>
+						<td><a href="#player_niveauLBL">player_niveauLBL</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a></td>
+						<td><a href="#menu_setting_canvas">menu_setting_canvas</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a></td>
+						<td><a href="#menu_setting_difficulteeLBL">menu_setting_difficulteeLBL</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="https://pillow.readthedocs.io/en/4.2.x/reference/ImageTk.html">ImageTk.PhotoImage</a>[2]</td>
+						<td><a href="#img">img</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a>[2]</td>
+						<td><a href="#menu_setting_difficulteeIMG">menu_setting_difficulteeIMG</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/ctrvar.html">tkinter.IntVar</a></td>
+						<td><a href="#menu_setting_son_cb_var">menu_setting_son_cb_var</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/chw.html">tkinter.Checkbutton</a></td>
+						<td><a href="#menu_setting_sonCB">menu_setting_sonCB</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a></td>
+						<td><a href="#menu_setting_enregistrementLBL">menu_setting_enregistrementLBL</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/ctrvar.html">tkinter.StringVar</a></td>
+						<td><a href="#menu_setting_enregistrement_value_RB">menu_setting_enregistrement_value_RB</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/radbw.html">tkinter.Radiobutton</a></td>
+						<td><a href="#menu_setting_enregistrement_manuelRB">menu_setting_enregistrement_manuelRB</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/radbw.html">tkinter.Radiobutton</a></td>
+						<td><a href="#menu_setting_enregistrement_autoRB">menu_setting_enregistrement_autoRB</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a></td>
+						<td><a href="#menu_setting_okBTN">menu_setting_okBTN</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a></td>
+						<td><a href="#menu_jeu_info_canvas">menu_jeu_info_canvas</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a></td>
+						<td><a href="#player_nameLBL">player_nameLBL</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a></td>
+						<td><a href="#player_scoreLBL">player_scoreLBL</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>CSetting</td>
+						<td><a href="#setting">setting</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>int</td>
+						<td><a href="#playerIndex">playerIndex</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>object[string, string, int, string, int]</td>
+						<td><a href="#joueurTab">joueurTab</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>string[]</td>
+						<td><a href="#fichier_joueurTab">fichier_joueurTab</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>bool</td>
+						<td><a href="#game_running">game_running</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>object[<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, CObstacle, [string, int, string, int]]</td>
+						<td><a href="#objTab">objTab</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>Thread</td>
+						<td><a href="#engineTH">engineTH</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>Thread</td>
+						<td><a href="#sauvegarde_autoTH">sauvegarde_autoTH</a></td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>int</td>
+						<td><a href="#difficultee">difficultee</a></td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h2>Fonctions publiques</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>Constructeur :</td>
+						<td><a href="#CGame">CGame</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#lancer_jeu">lancer_jeu</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#restart_game">restart_game</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#save_game">save_game</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#pause_game">pause_game</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#joueur_perdu">joueur_perdu</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#joueur_gagnie">joueur_gagnie</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#niveau_suivant">niveau_suivant</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#engine">engine</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#sauvegarde_auto">sauvegarde_auto</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#menu_demarrage">menu_demarrage</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#get_all_player_info">get_all_player_info</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#create_new_player">create_new_player</a>(pplayer_name : string)</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#set_player">set_player</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#afficher_map">afficher_map</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#hide_setting">hide_setting</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#show_setting">show_setting</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#add_player">add_player</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#remove_player">remove_player</a>()</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#set_difficultee">set_difficultee</a>(event)</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td><a href="#selectLB">selectLB</a>(event)</td>
+					</tr>
+				</tbody>
+			</table>
+
+		<h2>Documentation des membres</h2>
+			<h3 id="fenetre">CGame : <a href="#fenetre">fenetre</a></h3>
+			<p>Correspond à la <a href="#fenetre">fenêtre</a> principale, elle contient tous les menus et autres elements du jeu</p>
+			<h3 id="map">CGame : map</h3>
+			<p>Correspond à l'espace de jeu, elle contient les objets <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_arrivee.html">CArrivee</a> et CObstacle</p>
+			<h3 id="personnage">CGame : personnage</h3>
+			<p>Correspond au joueur, objet de forme cubique pouvant se deplacer dans l'objet <a href="classe_map.html">CMap</a> et intéragir avec ses autes éléments </a>(<a href="classe_arrivee.html">CArrivee</a> et CObstacle)</p>
+			<h3 id="arrivee">CGame : arrivee</h3>
+			<p>Correspond à l'arrivée, objet de forme cubique sur lequel le joueur <a href="classe_personnage.html">CPersonnage</a> doit se placer</p>		
+			<h3 id="obstacles">CGame : obstacles[]</h3>
+			<p>Représente un tableau de CObstacle, il contient tous les obstacles pour permettre une gestion plus facile et rapide des intersections avec un éventuel <a href="classe_personnage.html">CPersonnage</a></p>
+			<h3 id="game_status_canvas">CGame : game_status_canvas</h3>
+			<p>Cadre de type <a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a> correspondant au menu de la gestion du jeu, il contient les différents boutons permettant de contrôler le jeu </a>(startBTN, restartBTN, nextBTN, pauseBTN, saveBTN, show_menuBTN)</p>
+			<h3 id="startBTN">CGame : startBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant de lancer le jeu</p>
+			<h3 id="restartBTN">CGame : restartBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant de recommencer le niveau</p>
+			<h3 id="nextBTN">CGame : nextBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant de passer au niveau suivant</p>
+			<h3 id="pauseBTN">CGame : pauseBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant de mettre en pause la partie en cours</p>
+			<h3 id="saveBTN">CGame : saveBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant d'enregistrer la partie en cours</p>
+			<h3 id="show_menuBTN">CGame : show_menuBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant d'afficher le menu de parametre menu_setting_canvas</p>
+			<h3 id="menu_popup_canvas">CGame : menu_popup_canvas</h3>
+			<p>Cadre de type <a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a> correspondant au menu de la gestion des joueurs, il contient les différents boutons permettant de choisir/ajouter/supprimer un joueur </a>(select_player_okBTN, add_playerBTN, remove_playerBTN)</p>
+			<h3 id="player_lbFM">CGame : player_lbFM</h3>
+			<p>Cadre de type Frame contenant une <a href="http://tkinter.fdex.eu/doc/lbw.html">tkinter.Listbox</a>, utilisé pour dimensionner et placer correctement la <a href="http://tkinter.fdex.eu/doc/lbw.html">tkinter.Listbox</a> playerLB et la <a href="http://tkinter.fdex.eu/doc/scrw.html">tkinter.Scrollbar</a> player_lbSB</p>
+			<h3 id="player_lbSB">CGame : player_lbSB</h3>
+			<p>Barre de défilement de type <a href="http://tkinter.fdex.eu/doc/scrw.html">tkinter.Scrollbar</a> permettant de naviguer dans la <a href="http://tkinter.fdex.eu/doc/lbw.html">tkinter.Listbox</a> playerLB</p>
+			<h3 id="playerLB">CGame : playerLB</h3>
+			<p>Zone de liste de type <a href="http://tkinter.fdex.eu/doc/lbw.html">tkinter.Listbox</a> contenant tous les fichiers joueur chargés</p>
+			<h3 id="select_player_okBTN">CGame : select_player_okBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant d'initialiser la jeu avec le joueur selectionné dans la zone de liste de type <a href="http://tkinter.fdex.eu/doc/lbw.html">tkinter.Listbox</a> playerLB </p>
+			<h3 id="add_playerBTN">CGame : add_playerBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant d'afficher un menu pour la création d'un nouveau joueur et ainsi ajouter le nouveau joueur dans la zone de liste playerLB</p>
+			<h3 id="remove_playerBTN">CGame : remove_playerBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant la suppression d'un joueur</p>
+			<h3 id="scoreLBL">CGame : scoreLBL</h3>
+			<p>Zone de texte de type <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a> à l'interieur du cadre menu_popup_canvas qui affiche le score du joueur selectionné dans la zone de liste playerLB</p>
+			<h3 id="player_niveauLBL">CGame : player_niveauLBL</h3>
+			<p>Zone de texte de type <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a> à l'interieur du cadre menu_popup_canvas qui affiche le niveau du joueur selectionné dans la zone de liste playerLB</p>
+			<h3 id="menu_setting_canvas">CGame : menu_setting_canvas</h3>
+			<p>Cadre de type <a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a> correspondant au menu de paramètrage du jeu, il contient les différents boutons permettant de choisir la difficultée/l'enregistrement automatique ou pas/d'activer le son ou pas </a>(menu_setting_difficulteeIMG, menu_setting_son_cb_var, menu_setting_enregistrement_value_RB) et d'appliquer les paramètres choisis </a>(menu_setting_okBTN)</p>
+			<h3 id="menu_setting_difficulteeLBL">CGame : menu_setting_difficulteeLBL</h3>
+			<p>Zone de texte de type <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a> à l'interieur du cadre menu_setting_canvas qui affiche "Difficultée = "</p>
+			<h3 id="img">CGame : img[]</h3>
+			<p>Représente un tableau de <a href="https://pillow.readthedocs.io/en/4.2.x/reference/ImageTk.html">ImageTk.PhotoImage</a> qui contient 3 images affichées dans des <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a>, elles correspondent aux images difficultées </a>(vert : facile, orange : moyen, rouge : difficile)</p>
+			<h3 id="menu_setting_difficulteeIMG">CGame : menu_setting_difficulteeIMG[2]</h3>
+			<p>Représente un tableau de <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a> de taille 3, il permet l'affichage des images contenues dans le tableau img</p>
+			<h3 id="menu_setting_son_cb_var">CGame : menu_setting_son_cb_var</h3>
+			<p>Variable de contrôle qui contient la valeur de menu_setting_sonCB </a>(1:on, 0:off)</p>
+			<h3 id="menu_setting_enregistrementLBL">CGame : menu_setting_enregistrementLBL</h3>
+			<p>Zone de texte de type <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a> à l'interieur du cadre menu_setting_canvas, il affiche "Enregistrement = "</p>
+			<h3 id="menu_setting_enregistrement_value_RB">CGame : menu_setting_enregistrement_value_RB</h3>
+			<p>Variable de contrôle qui contient la valeur sur l'état d'enregistrement </a>(auto, manuel)</p>
+			<h3 id="menu_setting_enregistrement_manuelRB">CGame : menu_setting_enregistrement_manuelRB</h3>
+			<p>Bouton radio de type <a href="http://tkinter.fdex.eu/doc/radbw.html">tkinter.Radiobutton</a> permettant de changer la valeur de menu_setting_enregistrement_value_RB en 'manuel'</p>
+			<h3 id="menu_setting_enregistrement_autoRB">CGame : menu_setting_enregistrement_autoRB</h3>
+			<p>Bouton radio de type <a href="http://tkinter.fdex.eu/doc/radbw.html">tkinter.Radiobutton</a> permettant de changer la valeur de menu_setting_enregistrement_value_RB en 'auto'</p>
+			<h3 id="menu_setting_okBTN">CGame : menu_setting_okBTN</h3>
+			<p>Bouton cliquable de type <a href="http://tkinter.fdex.eu/doc/bw.html">tkinter.Button</a> permettant d'appliquer les paramètres choisis par l'utilisateur et de fermer menu_setting_canvas</p>
+			<h3 id="menu_jeu_info_canvas">CGame : menu_jeu_info_canvas</h3>
+			<p>Cadre de type <a href="http://tkinter.fdex.eu/doc/caw.html">tkinter.Canvas</a> correspondant à l'état de la partie en cours, il contient le nom du joueur et le score </a>(player_nameLBL, player_scoreLBL)</p>
+			<h3 id="player_nameLBL">CGame : player_nameLBL</h3>
+			<p>Zone de texte de type <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a> à l'interieur du cadre menu_jeu_info_canvas qui affiche le nom du joueur actuel</p>
+			<h3 id="player_scoreLBL">CGame : player_scoreLBL</h3>
+			<p>Zone de texte de type <a href="http://tkinter.fdex.eu/doc/labw.html">tkinter.Label</a> à l'interieur du cadre menu_jeu_info_canvas qui affiche le score du joueur actuel</p>
+			<h3 id="setting">CGame : setting</h3>
+			<p>Objet de type CSetting permettant la gestion, lecture, ecriture des différents fichiers </a>(joueur et niveau)</p>
+			<h3 id="playerIndex">CGame : playerIndex</h3>
+			<p>Variable correspondant à l'index du joueur choisi, valeur par défaut -1</p>
+			<h3 id="joueurTab">	CGame : joueurTab[string, string, int, string, int]</h3>
+			<p>Tableau contenant les informations de tous les joueurs avec comme format : [chemin_du_fichier, nom, score, partie_sauvegardée, niveau]</p>
+			<h3 id="fichier_joueurTab">CGame : fichier_joueurTab[]</h3>
+			<p>Tableau contenant le nom des fichiers joueur, il permet de savoir si un joueur a déjà été lu</p>
+			<h3 id="game_running">CGame : game_running</h3>
+			<p>Variable correspondant à l'état du jeu : True le jeu tourne, False le jeu n'est pas en marche.
+			elle permet entre autre de lancer/stoper le jeu</p>
+			<h3 id="objTab">CGame : objTab[<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, CObstacle, [string, int, string, int]]</h3>
+			<p>Tableau contenant les objets de la partie en cours avec pour format [<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, CObstacle, [nom_joueur,score,sauvegarde,niveau_en_cours]]</p>
+			<h3 id="engineTH">CGame : engineTH</h3>
+			<p>Thread qui gère le coeur du jeu quand la partie est lancée, il permet la gestion des collision avec les obstacles et si le joueur à gagnié ou perdu. Il s'arrête si game_running = False ou si le joueur à gagnié</p>
+			<h3 id="sauvegarde_autoTH">CGame : sauvegarde_autoTH</h3>
+			<p>Thread qui gère le traitement de la sauvegarde automatique </a>(toutes les 1 minutes)</p>
+			<h3 id="difficultee">CGame : difficultee</h3>
+			<p>Variable contenant la difficultée, facile=10, moyen=7, difficile=2, valeur_par_défaut=10</p>
+
+		<h2>Documentation des fonctions</h2>
+			<h3 id="CGame">CGame()</h3>
+				<p>Construit un jeu Escube Game avec fenêtre et menus de gestion intégrés</p>
+			<h3 id="lancer_jeu">lancer_jeu()</h3>
+				<p>Fonction pour démarrer le jeu (mouvements, etc...)</p>
+			<h3 id="restart_game">restart_game()</h3>
+				<p>Fonction pour recommancer la partie</p>
+			<h3 id="save_game">save_game()</h3>
+				<p>Fonction qui enregistre la partie</p>
+			<h3 id="pause_game">pause_game()</h3>
+				<p>Fonction pour mettre en pause le jeu</p>
+			<h3 id="joueur_perdu">joueur_perdu()</h3>
+				<p>Fonction appellée quand le joueur a perdu</p>
+			<h3 id="joueur_gagnie">joueur_gagnie()</h3>
+				<p>Fonction appellée quand le joueur a gagnié</p>
+			<h3 id="niveau_suivant">niveau_suivant()</h3>
+				<p>Fonction pour afficher le niveau suivant</p>
+			<h3 id="engine">engine()</h3>
+				<p>Thread gestion du jeu </p>
+			<h3 id="sauvegarde_auto">sauvegarde_auto()</h3>
+				<p>Thread sauvegarde du jeu </p>
+			<h3 id="menu_demarrage">menu_demarrage()</h3>
+				<p>Fonction qui gère le menu de demarrage</p>
+			<h3 id="get_all_player_info">get_all_player_info()</h3>
+				<p>Fonction qui permet de lire tous les fichiers joueurs</p>
+			<h3 id="create_new_player">create_new_player(pplayer_name : string)</h3>
+				<p>Fonction qui permet la creation d'un nouveau joueur : <br>
+				- pplayer_name le nom du nouveau joueur.</p>
+			<h3 id="set_player">set_player()</h3>
+				<p>Fonction qui initalise le jeu avec les information du joueur choisi</p>
+			<h3 id="afficher_map">afficher_map()</h3>
+				<p>Fonction qui affiche la map</p>
+			<h3 id="hide_setting">hide_setting()</h3>
+				<p>Fonction qui cache le menu setting</p>
+			<h3 id="show_setting">show_setting()</h3>
+				<p>Fonction qui affiche le menu setting</p>
+			<h3 id="add_player">add_player()</h3>
+				<p>Fonction qui permet l'ajout d'un nouveau joueur</p>
+			<h3 id="remove_player">remove_player()</h3>
+				<p>Fonction qui permet de supprimer un joueur</p>
+			<h3 id="set_difficultee">set_difficultee()</h3>
+				<p>Fonction d'évenement qui gere le clique sur les images de difficultee</p>
+			<h3 id="selectLB">selectLB()</h3>
+				<p>Fonction d'évenement qui permet l'affichage des informations des joueurs</p>
+	</body>
+</html>

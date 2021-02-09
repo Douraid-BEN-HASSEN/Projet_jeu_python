@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Escube game : Classe CSetting </title>
+</head>
+	<body>
+		<!-- Classe CSetting -->
+		<h1>Classe CSetting</h1>
+		<p>Cette classe créer un outils permettant de gérer, créer, lire et écrire dans des fichiers propres au jeu</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Module :</td>
+					<td>from CSetting import CSetting</td>
+				</tr>
+				<tr>
+					<td>Classe mère :</td>
+					<td>/</td>
+				</tr>
+				<tr>
+					<td>Classe(s) fille(s) :</td>
+					<td>/</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Membres</h2>
+		<p>Aucun</p>
+
+		<h2>Fonctions publiques</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td>Constructeur :</td>
+					<td><a href="#CSetting">CSetting</a>()</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#readFile">readFile</a>(ppath : string) : string</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#createFile">createFile</a>(ppath : string) : bool</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#updateFile">updateFile</a>(ppath : string, pdata : string) bool</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#lire_niveau">lire_niveau</a>(pfichier_niveau_path : string) : [<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[]]</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#lire_joueur">lire_joueur</a>(pfichier_joueur_path : string) : [string, string, int, string, int]</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#load_game">load_game</a>(pgame_data : string) : [<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[]]</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#save_game">save_game</a>(pdata : string) : bool</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Documentation des membres</h2>
+			<p>Aucun</p>
+
+		<h2>Documentation des fonctions</h2>
+			<h3 id="CSetting">CSetting : CSetting()</h3>
+				<p>Construit un CSetting sans paramètres</p>
+			<h3 id="readFile">CSetting : readFile(ppath : string) : string</h3>
+				<p>Fonction qui lit un fichier et qui prend en paramètre :<br>
+				ppath le chemin du fichier.<br>
+				Valeur de retour : contenu du fichier si tout est OK, sinon False.<br>
+				</p>
+			<h3 id="createFile">CSetting : createFile(ppath : string) : string</h3>
+				<p>Fonction qui créer un fichier et qui prend en paramètre :<br>
+				ppath le chemin du fichier.<br>
+				Valeur de retour : True si tout est OK, sinon False.<br>
+				</p>
+			<h3 id="updateFile">CSetting : updateFile(ppath : string, pdata : string) : bool</h3>
+				<p>Fonction met à jour un fichier et qui prend en paramètre :<br>
+				- ppath le chemin du fichier à mettre à jour.<br>
+				- pdata le nouveau contenu du fichier.<br>
+				Valeur de retour : True si tout est OK, sinon False.<br>
+				</p>
+			<h3 id="lire_niveau">CSetting : lire_niveau(pfichier_niveau_path : string) : [<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[]]</h3>
+				<p>Fonction lit un fichier niveau et qui prend en paramètre :<br>
+				- pfichier_niveau_path le chemin du fichier niveau.<br> Valeur de retour : [<a href="classe_map.html">CMap</a>, CArrive, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[]].<br>
+				</p>
+			<h3 id="lire_joueur">CSetting : lire_joueur(pfichier_joueur_path : string) : [string, string, int, string, int]</h3>
+				<p>Fonction lit un fichier joueur et qui prend en paramètre :<br>
+				- pfichier_joueur_path le chemin du fichier niveau.<br> Valeur de retour : [string, string, int, string, int] (nom_du_fichier, nom_du_joueur, score, sauvegarde, niveau).<br> 
+				</p>
+			<h3 id="load_game">CSetting : load_game(pgame_data : string) : [<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[]]</h3>
+				<p>Fonction qui charge une sauvegarde et qui retourne une partie de jeu :<br>
+				- pgame_data la sauvegarde.<br> Valeur de retour : [<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[]].<br> 
+				</p>
+			<h3 id="save_game">CSetting : save_game(pdata : string) : bool</h3>
+				<p>Fonction qui enregistre une sauvegarde, elle transforme un tableau d'objet (<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[], info_joueur) en texte de sauvegarde<br>
+				- pdata le tableau d'état sous forme [<a href="classe_map.html">CMap</a>, <a href="classe_arrivee.html">CArrivee</a>, <a href="classe_personnage.html">CPersonnage</a>, <a href="classe_obstacle.html">CObstacle</a>[], info_joueur[fichier_path, joueur_nom, score, sauvegarde, niveau]].<br> Valeur de retour : True si tout est OK, False si il y a une erreur.<br> 
+				</p>
+	</body>
+</html>

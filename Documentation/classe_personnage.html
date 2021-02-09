@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Escube game : Classe CPersonnage </title>
+</head>
+	<body>
+		<!-- Classe CPersonnage -->
+		<h1>Classe CPersonnage</h1>
+		<p>Classe correspondant au personnage,
+		elle peut permettre au joueur de se deplacer.</p>
+		<table>
+			<tbody>
+				<tr>
+					<td>Module :</td>
+					<td>from CPersonnage import CPersonnage</td>
+				</tr>
+				<tr>
+					<td>Classe mère :</td>
+					<td>/</td>
+				</tr>
+				<tr>
+					<td>Classe(s) fille(s) :</td>
+					<td>/</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Membres</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td>+</td>
+					<td><a href="classe_map.html">CMap</a></td>
+					<td><a href="#map">map</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>string</td>
+					<td><a href="#color">color</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int</td>
+					<td><a href="#width">width</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int</td>
+					<td><a href="#height">height</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int</td>
+					<td><a href="#x">x</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int</td>
+					<td><a href="#y">y</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="http://tkinter.fdex.eu/doc/caw.html#rectangles">tkinter.Canvas rectangle</a></td>
+					<td><a href="#personnage">personnage</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int</td>
+					<td><a href="#speed">speed</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int</td>
+					<td><a href="#avancement">avancement</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>bool</td>
+					<td><a href="#game_running">game_running</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int[2]</td>
+					<td><a href="#startPos">startPos</a></td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>int[]</td>
+					<td><a href="#movementTab">movementTab</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Fonctions publiques</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td>Constructeur :</td>
+					<td><a href="#CPersonnage">CPersonnage</a>(pmap : <a href="classe_map.html">CMap</a>, pcolor="#FFFFFF" : string, pwidth=20 : int, pheight=20 : int, px=0 : int, py=0 : int, pstarpos=[-1,-1] : int[2])</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td><a href="#obj_init">obj_init</a>()</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td><a href="#movement">movement</a>()</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td><a href="#left">left</a>()</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td><a href="#right">right</a>()</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td><a href="#up">up</a>()</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td><a href="#down">down</a>()</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td><a href="#keyup">keyup</a>(e : event &lt;KeyRelease&gt;)</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td><a href="#keydown">keydown</a>(e : event &lt;KeyPress&gt;)</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Documentation des membres</h2>
+		<h3 id="map">CPersonnage : map</h3>
+		<p>Correspond à l'espace de jeu parent <a href="classe_map.html">CMap</a>.</p>
+		<h3 id="color">CPersonnage : color</h3>
+		<p>Correspond à la couleur du personnage. <br>Exemple : "#FFFFFF" ou "white" <br>Valeur par defaut : "#FFFFFF".</p>
+		<h3 id="width">CPersonnage : width</h3>
+		<p>Correspond à la largeur du personnage. <br>Valeur par défaut : 20.</p>
+		<h3 id="height">CPersonnage : height</h3>
+		<p>Correspond à la hauteur du personnage. <br>Valeur par défaut : 20.</p>
+		<h3 id="x">CPersonnage : x</h3>
+		<p>Correspond à la position x du personnage par rapport au cadre parent <a href="#map">map</a>.</p>
+		<h3 id="y">CPersonnage : y</h3>
+		<p>Correspond à la position y du personnage par rapport au cadre parent <a href="#map">map</a>.</p>
+		<h3 id="personnage">CPersonnage : personnage</h3>
+		<p>Correspond au corps du personnage sous forme de canvas rectangle qui a pour parent <a href="#map">map</a>.</p>
+		<h3 id="speed">CPersonnage : speed</h3>
+		<p>Correspond à la vitesse du personnage en ms <br>Exemple : 7 (moyen) <br>Valeur par défaut : 10 (facile).</p>
+		<h3 id="avancement">CPersonnage : avancement</h3>
+		<p>Correspond au coefficient d'avancement du personnage. <br>Exemple : 5 (le personnage se déplace de 5px en 5px) <br>Valeur par défaut : 1 (le personnage se déplace de 1px en 1px).</p>
+		<h3 id="game_running">CPersonnage : game_running</h3>
+		<p>Variable correspondant à l'état du jeu : True le jeu tourne, False le jeu n'est pas en marche. elle permet entre autre de gérer les déplacement du joueur.</p>
+		<h3 id="startPos">CPersonnage : startPos[2]</h3>
+		<p>Tableau d'entiers contenant la position de départ X et Y du personnage. <br>Valeur par défaut : [-1,-1]</p>
+		<h3 id="movementTab">CPersonnage : movementTab[]</h3>
+		<p>Tableau d'entiers contenant l'historique des touches pressées par l'utilisateur.</p>
+
+		<h2>Documentation des fonctions</h2>
+			<h3 id="CPersonnage">CPersonnage : CPersonnage(pmap : <a href="classe_map.html">CMap</a>, pcolor="#FFFFFF" : string, pwidth=20 : int, pheight=20 : int, px=0 : int, py=0 : int, pstarpos=[-1,-1] : int[2])</h3>
+				<p>Construit un CPersonnage avec les paramètres suivants :<br>
+				pmap : zone de jeu parent <a href="classe_map.html">CMap</a>.<br>
+				pcolor : couleur du personnage. Valeur par défaut : "#FFFFFF".<br>
+				pwidth : largeur du personnage. Valeur par défaut : 20.<br>
+				pheight : hauteur du personnage.  Valeur par défaut : 20.<br>
+				px : position x du personnage par rapport au cadre map.canvas. Valeur par défaut : 0.<br>
+				py : position y du personnage par rapport au cadre map.canvas. Valeur par défaut : 0.<br>
+				pstarpos : position de départ du personnage. Valeur par défaut : [-1, -1].<br>
+				</p>
+			<h3 id="obj_init">CPersonnage : obj_init()</h3>
+				<p>Fonction qui initialise l'objet CPersonnage :<br>
+				elle crée le corps du personnage.<br>
+				elle affiche le personnage dans la zone de jeu.<br>
+				elle fait le lien entre les evenements et les fonctions de deplacement.<br>
+				</p>
+			<h3 id="movement">CPersonnage : movement()</h3>
+				<p>Fonction qui deplace le CPersonnage a ses coordonnees x et y</p>
+			<h3 id="left">CPersonnage : left()</h3>
+				<p>Fonction qui est appelée quand Left est pressée :<br>
+				Elle décrémente x à hauteur de x-avancement.<br>
+				</p>
+			<h3 id="right">CPersonnage : right()</h3>
+				<p>Fonction qui est appelée quand Right est pressée :<br>
+				Elle incrémente x à hauteur de x+avancement.<br>
+				</p>
+			<h3 id="up">CPersonnage : up()</h3>
+				<p>Fonction qui est appelée quand Up est pressée :<br>
+				Elle incrémente y à hauteur de y+avancement.<br>
+				</p>
+			<h3 id="keyup">CPersonnage : keyup(e : event &lt;KeyRelease&gt;)</h3>
+				<p>Fonction qui est appelée quand l'une des touches Haut, Bas, Gauche ou Droite est relachée :<br>
+				Elle retire la touche relachée du tableau <a href="#movementTab">movementTab</a>.<br>
+				</p>
+			<h3 id="keydown">CPersonnage : keydown(e : event &lt;KeyPress&gt;)</h3>
+				<p>Fonction qui est appelée quand l'une des touches Haut, Bas, Gauche ou Droite est pressée :<br>
+				Elle ajoute la touche pressée dans le tableau <a href="#movementTab">movementTab</a>.<br>
+				</p>
+	</body>
+</html>

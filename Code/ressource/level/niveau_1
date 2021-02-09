@@ -1,0 +1,29 @@
+########## MAP OBJECT ##########
+map_title=Niveau 1;
+map_color=#DCDCDC;
+map_height=600;
+map_width=800;
+########## ARRIVEE OBJECT ##########
+arrivee_color=#00FF00;
+arrivee_x=10;
+arrivee_y=10;
+arrivee_width=100;
+arrivee_height=100;
+########## PERSONNAGE OBJECT ##########
+personnage_color=#F5DD29;
+personnage_width=25; 
+personnage_height=25;
+personnage_x=10;
+personnage_y=565;
+########## OBSTACLE OBJECT ##########
+obstacle_color=#696969;
+obstacle_x=10;
+obstacle_y=120; 
+obstacle_width=400; 
+obstacle_height=50;
+
+obstacle_color=#696969;
+obstacle_x=400;
+obstacle_y=390; 
+obstacle_width=390; 
+obstacle_height=200;
